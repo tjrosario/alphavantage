@@ -3,13 +3,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with
 
 ## Getting started
 
-Install dependencies 
+Install dependencies
 
 ```
 yarn
 ```
 
-Create an environment (.env) config file in the project root with the following contents:
+Create an environment (.env) config file in the project root with the following
+contents:
+
 ```
 NEXT_PUBLIC_AV_API_KEY='demo'
 NEXT_PUBLIC_AV_BASE_URL='https://www.alphavantage.co'
