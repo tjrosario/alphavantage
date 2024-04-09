@@ -26,6 +26,7 @@ interface ChartProps {
 }
 
 const defaultOptions = {
+  maintainAspectRatio: false,
   responsive: true,
   plugins: {
     legend: {
@@ -43,7 +44,9 @@ export default function Chart({ data, options }: ChartProps) {
 
   return (
     <div className="border border-solid border-gray-200 rounded-md shadow-md p-5 relative">
-      <Line options={opts} data={data} />
+      <div className="responsive-chart">
+        <Line options={opts} data={data} />
+      </div>
     </div>
   );
 }

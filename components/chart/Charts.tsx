@@ -6,9 +6,11 @@ import { ChartContext } from '@/components/chart/ChartProvider';
 import { useContext } from 'react';
 import { BalanceSheetReport, IncomeStatementReport } from '@/types/report';
 import Loader from '@/components/loader/Loader';
+import Alert from '@/components/alert/Alert';
 
 export default function Charts() {
   const {
+    alert,
     balanceSheetData,
     incomeStatementData,
     loading,
@@ -74,6 +76,12 @@ export default function Charts() {
   return (
     <div>
       <ChartControls onSymbolChange={(value) => fetchData(value)} />
+
+      {!!alert?.content && (
+        <div className="mt-5">
+          <Alert type={alert.type}>{alert.content}</Alert>
+        </div>
+      )}
 
       <div className="mt-5">{loading ? <Loader /> : <Chart data={data} />}</div>
     </div>

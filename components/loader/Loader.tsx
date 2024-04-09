@@ -5,7 +5,7 @@ interface LoaderProps {
 
 export default function Loader({ height = 10, width = 10 }: LoaderProps) {
   return (
-    <div role="status" className={`w-${width} h-${height} m-auto`}>
+    <div role="status" className={`w-${width} h-${height} max-w-14 mx-auto`}>
       <svg
         aria-hidden="true"
         className={`w-${width} h-${height} text-gray-200 animate-spin dark:text-gray-600 fill-blue-600`}
