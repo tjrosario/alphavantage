@@ -1,4 +1,4 @@
-import api from "@/utils/api/api";
+import api from '@/utils/api/api';
 
 export function fetchBalanceSheet(symbol: string) {
   try {

@@ -1,9 +1,10 @@
-import Chart from "@/components/chart/Chart";
-import ChartControls from "@/components/chart/ChartControls";
-import { fetchIncomeStatements } from "@/utils/api/incomeStatement";
-import { fetchBalanceSheet } from "@/utils/api/balanceSheet";
-import { ChartContext } from "@/components/chart/ChartProvider";
-import { useContext } from "react";
+import Chart from '@/components/chart/Chart';
+import ChartControls from '@/components/chart/ChartControls';
+import { fetchIncomeStatements } from '@/utils/api/incomeStatement';
+import { fetchBalanceSheet } from '@/utils/api/balanceSheet';
+import { ChartContext } from '@/components/chart/ChartProvider';
+import { useContext } from 'react';
+import { BalanceSheetReport, IncomeStatementReport } from '@/types/report';
 
 export default function Charts() {
   const {
@@ -30,37 +31,38 @@ export default function Charts() {
     setLoading(false);
   }
 
+  // Build out data set for the chart
   const data = incomeStatementData?.quarterlyReports
     ? {
         labels: incomeStatementData?.quarterlyReports?.map(
-          (report) => report.fiscalDateEnding
+          (report: IncomeStatementReport) => report.fiscalDateEnding
         ),
         datasets: [
           {
-            label: "Net Income",
+            label: 'Net Income',
             data: incomeStatementData?.quarterlyReports?.map(
-              (report) => report.netIncome
+              (report: IncomeStatementReport) => report.netIncome
             ),
             fill: false,
-            borderColor: "#43911a",
+            borderColor: '#43911a',
             tension: 0.1,
           },
           {
-            label: "Total Revenue",
+            label: 'Total Revenue',
             data: incomeStatementData?.quarterlyReports?.map(
-              (report) => report.totalRevenue
+              (report: IncomeStatementReport) => report.totalRevenue
             ),
             fill: false,
-            borderColor: "#d5ae26",
+            borderColor: '#d5ae26',
             tension: 0.1,
           },
           {
-            label: "Total Shareholder Equity",
+            label: 'Total Shareholder Equity',
             data: balanceSheetData?.quarterlyReports?.map(
-              (report) => report.totalShareholderEquity
+              (report: BalanceSheetReport) => report.totalShareholderEquity
             ),
             fill: false,
-            borderColor: "#5a76f7",
+            borderColor: '#5a76f7',
             tension: 0.1,
           },
         ],

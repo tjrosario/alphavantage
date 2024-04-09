@@ -7,8 +7,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
@@ -29,7 +29,7 @@ const defaultOptions = {
   responsive: true,
   plugins: {
     legend: {
-      position: "top" as const,
+      position: 'top' as const,
     },
   },
 };

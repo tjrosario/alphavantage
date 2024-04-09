@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Charts from "@/components/chart/Charts";
-import { ChartProvider } from "@/components/chart/ChartProvider";
+import Charts from '@/components/chart/Charts';
+import { ChartProvider } from '@/components/chart/ChartProvider';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <div className="md:flex items-baseline gap-5">
           <h1 className="text-4xl">Quarterly Financials</h1>
           <small>
-            Powered by{" "}
+            Powered by{' '}
             <a
               href="https://www.alphavantage.co/documentation/"
               className="text-blue-400 hover:underline"

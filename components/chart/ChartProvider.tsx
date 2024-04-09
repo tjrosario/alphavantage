@@ -1,8 +1,8 @@
-import React, { useState, createContext, ReactNode } from "react";
-import SYMBOLS from "@/data/stockSymbols";
-import { Stock } from "@/types/stock";
-import { BalanceSheet } from "@/types/balanceSheet";
-import { IncomeStatement } from "@/types/statement";
+import React, { useState, createContext, ReactNode } from 'react';
+import SYMBOLS from '@/data/stockSymbols';
+import { Stock } from '@/types/stock';
+import { BalanceSheet } from '@/types/balanceSheet';
+import { IncomeStatement } from '@/types/statement';
 
 interface ChartContextProps {
   balanceSheetData: BalanceSheet;
@@ -40,7 +40,7 @@ function ChartProvider({ children }: ChartProviderProps) {
     setBalanceSheetData,
     setIncomeStatementData,
     setLoading,
-    stocks: SYMBOLS.filter((s) => s.ticker === "IBM"),
+    stocks: SYMBOLS.filter((s) => s.ticker === 'IBM'),
   };
 
   return (

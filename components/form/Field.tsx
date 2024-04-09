@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import Loader from "@/components/loader/Loader";
+import { ReactNode } from 'react';
+import Loader from '@/components/loader/Loader';
 
 interface FieldProps {
   children: ReactNode;
