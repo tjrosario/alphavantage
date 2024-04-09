@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with
 
 ## Getting started
 
-Install dependencies
+Install dependencies:
 
 ```
 yarn
