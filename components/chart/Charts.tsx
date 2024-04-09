@@ -5,11 +5,13 @@ import { fetchBalanceSheet } from '@/utils/api/balanceSheet';
 import { ChartContext } from '@/components/chart/ChartProvider';
 import { useContext } from 'react';
 import { BalanceSheetReport, IncomeStatementReport } from '@/types/report';
+import Loader from '@/components/loader/Loader';
 
 export default function Charts() {
   const {
     balanceSheetData,
     incomeStatementData,
+    loading,
     setBalanceSheetData,
     setIncomeStatementData,
     setLoading,
@@ -73,9 +75,7 @@ export default function Charts() {
     <div>
       <ChartControls onSymbolChange={(value) => fetchData(value)} />
 
-      <div className="mt-5">
-        <Chart data={data} />
-      </div>
+      <div className="mt-5">{loading ? <Loader /> : <Chart data={data} />}</div>
     </div>
   );
 }
